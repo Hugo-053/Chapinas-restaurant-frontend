@@ -1,0 +1,815 @@
+/* Reset básico y configuración general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background-color: #f5f0e8;
+    background-image: 
+        repeating-linear-gradient(90deg, rgba(139, 90, 43, 0.03) 0px, rgba(139, 90, 43, 0.03) 1px, transparent 1px, transparent 50px),
+        repeating-linear-gradient(0deg, rgba(139, 90, 43, 0.03) 0px, rgba(139, 90, 43, 0.03) 1px, transparent 1px, transparent 50px),
+        url('../img/logo100.png');
+    background-size: auto, auto, 200px 200px;
+    background-position: 0 0, 0 0, center center;
+    background-repeat: repeat, repeat, repeat;
+    position: relative;
+    color: #3e2a1a;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 100%;
+    margin: 0;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(245, 240, 232, 0.92);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Estilos del navegador */
+nav {
+    background: linear-gradient(135deg, #8b5a2b 0%, #6b4423 100%);
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(93, 58, 26, 0.3);
+    margin-bottom: 30px;
+    border: 2px solid #5d3a1a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.nav-logo {
+    flex-shrink: 0;
+}
+
+.nav-logo img {
+    height: 60px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+    border: none;
+    box-shadow: none;
+    max-width: none;
+}
+
+.nav-logo img:hover {
+    transform: scale(1.1);
+    box-shadow: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin: 0;
+    flex: 1;
+}
+
+nav ul li {
+    margin: 5px 0;
+}
+
+nav ul li a {
+    color: #f5f0e8;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: block;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+nav ul li a:hover {
+    background-color: rgba(245, 240, 232, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Títulos principales */
+h1 {
+    font-family: 'Georgia', serif;
+    font-size: 2.8em;
+    color: #5d3a1a;
+    text-align: center;
+    margin: 30px 0 20px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #e8dcc4 0%, #d4c5a9 100%);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(93, 58, 26, 0.15);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    border-left: 6px solid #8b5a2b;
+    border-right: 6px solid #8b5a2b;
+}
+
+/* Párrafo introductorio */
+body > p {
+    font-size: 1.15em;
+    text-align: center;
+    color: #4a3426;
+    margin: 25px auto 40px auto;
+    padding: 15px 25px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+    max-width: 700px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-top: 2px solid #a0826d;
+    border-bottom: 2px solid #a0826d;
+}
+
+strong {
+    color: #7d4e2a;
+    font-weight: bold;
+}
+
+/* Contenedor principal de reserva */
+.reservation-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Formulario de reserva */
+.reservation-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 16px rgba(93, 58, 26, 0.15);
+    border: 2px solid #e8dcc4;
+}
+
+/* Secciones del formulario */
+.form-section {
+    margin-bottom: 35px;
+}
+
+.form-section h2 {
+    font-family: 'Georgia', serif;
+    font-size: 1.8em;
+    color: #6b4423;
+    margin: 0 0 25px 0;
+    padding: 12px 20px;
+    background-color: #dfd5c3;
+    border-left: 8px solid #8b5a2b;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+/* Grupos de campos del formulario */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1em;
+    color: #5d3a1a;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.5);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1em;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #3e2a1a;
+    background-color: #faf8f4;
+    border: 2px solid #d4c5a9;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8b5a2b;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(139, 90, 43, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Fila de formulario (para campos en línea) */
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Botón de envío */
+.form-actions {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #e8dcc4;
+}
+
+.btn-submit {
+    font-family: 'Georgia', serif;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #f5f0e8;
+    background: linear-gradient(135deg, #8b5a2b 0%, #6b4423 100%);
+    padding: 15px 50px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(93, 58, 26, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(93, 58, 26, 0.4);
+    background: linear-gradient(135deg, #9d6b3b 0%, #7b5433 100%);
+}
+
+.btn-submit:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(93, 58, 26, 0.3);
+}
+
+.form-note {
+    font-size: 0.9em;
+    color: #7d4e2a;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* Caja de información */
+.info-box {
+    background: linear-gradient(135deg, #e8dcc4 0%, #d4c5a9 100%);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 16px rgba(93, 58, 26, 0.15);
+    border: 2px solid #c9b896;
+}
+
+.info-box h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.6em;
+    color: #5d3a1a;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #8b5a2b;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.info-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info-box ul li {
+    font-size: 1.05em;
+    color: #4a3426;
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.info-box ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #8b5a2b;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.info-box strong {
+    color: #6b4423;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    nav {
+        padding: 12px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-logo img {
+        height: 50px;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+
+    h1 {
+        font-size: 2em;
+        padding: 15px;
+        margin: 20px 0 15px 0;
+    }
+
+    body > p {
+        font-size: 1em;
+        padding: 12px 18px;
+        margin: 20px auto 30px auto;
+    }
+
+    .reservation-form {
+        padding: 25px;
+    }
+
+    .form-section h2 {
+        font-size: 1.5em;
+        padding: 10px 15px;
+        margin-bottom: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-row .form-group {
+        min-width: 100%;
+    }
+
+    .btn-submit {
+        font-size: 1.2em;
+        padding: 12px 40px;
+        width: 100%;
+    }
+
+    .info-box {
+        padding: 20px;
+    }
+
+    .info-box h3 {
+        font-size: 1.4em;
+    }
+
+    .info-box ul li {
+        font-size: 1em;
+        padding-left: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 10px 15px;
+    }
+
+    .nav-logo img {
+        height: 45px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav ul li a {
+        font-size: 0.95em;
+        padding: 8px 12px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+        border-left: 4px solid #8b5a2b;
+        border-right: 4px solid #8b5a2b;
+    }
+
+    body > p {
+        font-size: 0.95em;
+    }
+
+    .reservation-form {
+        padding: 20px;
+    }
+
+    .form-section {
+        margin-bottom: 25px;
+    }
+
+    .form-section h2 {
+        font-size: 1.3em;
+        border-left: 5px solid #8b5a2b;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 1em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 0.95em;
+    }
+
+    .btn-submit {
+        font-size: 1.1em;
+        padding: 12px 30px;
+    }
+
+    .info-box {
+        padding: 18px;
+    }
+
+    .info-box h3 {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+
+    .info-box ul li {
+        font-size: 0.95em;
+        margin-bottom: 10px;
+    }
+}
+
+/* Footer principal */
+footer {
+    background: linear-gradient(135deg, #8b5a2b 0%, #6b4423 100%);
+    color: #f5f0e8;
+    padding: 50px 30px 30px 30px;
+    margin-top: 60px;
+    border-radius: 0;
+    box-shadow: 0 -4px 20px rgba(93, 58, 26, 0.3);
+    border-top: 4px solid #5d3a1a;
+}
+
+/* Contenedor del footer */
+.footer-container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+/* Secciones del footer */
+.footer-section {
+    padding: 0 15px;
+}
+
+.footer-section h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.5em;
+    color: #f5f0e8;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid rgba(245, 240, 232, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Lista de enlaces del footer */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: #e8dcc4;
+    text-decoration: none;
+    font-size: 1.05em;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.footer-section ul li a:hover {
+    color: #ffffff;
+    transform: translateX(5px);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Información de contacto */
+.footer-section p {
+    color: #e8dcc4;
+    font-size: 1.05em;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.footer-section p strong {
+    color: #f5f0e8;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer-section a {
+    color: #e8dcc4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #ffffff;
+}
+
+/* Horarios */
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(245, 240, 232, 0.2);
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.schedule-day {
+    font-weight: bold;
+    color: #f5f0e8;
+}
+
+.schedule-time {
+    color: #e8dcc4;
+}
+
+/* Redes sociales */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(245, 240, 232, 0.15);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(245, 240, 232, 0.3);
+}
+
+.social-links a:hover {
+    background-color: rgba(245, 240, 232, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-color: #f5f0e8;
+}
+
+.social-links a svg {
+    width: 24px;
+    height: 24px;
+    fill: #f5f0e8;
+}
+
+/* Ubicación con icono */
+.location-info {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.location-icon {
+    width: 24px;
+    height: 24px;
+    fill: #f5f0e8;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* Barra inferior del footer */
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 2px solid rgba(245, 240, 232, 0.2);
+}
+
+.footer-bottom p {
+    color: #e8dcc4;
+    font-size: 0.95em;
+    margin: 5px 0;
+}
+
+.footer-bottom a {
+    color: #f5f0e8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Newsletter */
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 1em;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #3e2a1a;
+    background-color: #faf8f4;
+    border: 2px solid #d4c5a9;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.newsletter-form input[type="email"]:focus {
+    outline: none;
+    border-color: #f5f0e8;
+    box-shadow: 0 0 0 3px rgba(245, 240, 232, 0.2);
+}
+
+.newsletter-form button {
+    padding: 12px 25px;
+    font-family: 'Georgia', serif;
+    font-size: 1em;
+    font-weight: bold;
+    color: #8b5a2b;
+    background-color: #f5f0e8;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-form button:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    footer {
+        padding: 40px 20px 20px 20px;
+        margin-top: 40px;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-section {
+        padding: 0;
+        text-align: center;
+    }
+
+    .footer-section h3 {
+        font-size: 1.3em;
+    }
+
+    .schedule-item {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    
+    .location-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 30px 15px 15px 15px;
+    }
+
+    .footer-section h3 {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+
+    .footer-section ul li a,
+    .footer-section p {
+        font-size: 1em;
+    }
+
+    .social-links a {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-links a svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .footer-bottom p {
+        font-size: 0.9em;
+    }
+
+    
+    /* Sección legal y checkboxes */
+.legal-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    border: 2px solid #d4c5a9;
+}
+
+.checkbox-group {
+    margin-bottom: 15px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 1em;
+    color: #4a3426;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-top: 4px;
+    width: 18px;
+    height: 18px;
+    accent-color: #8b5a2b;
+    cursor: pointer;
+}
+
+.checkbox-label a {
+    color: #6b4423;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.checkbox-label a:hover {
+    color: #8b5a2b;
+}
+
+}
+
